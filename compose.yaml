@@ -1,0 +1,11 @@
+services:
+  discord-health-bot:
+    build: .
+    container_name: discord-health-bot
+    restart: unless-stopped
+    pid: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    env_file:
+      - .env
+networks: {}
